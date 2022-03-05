@@ -76,6 +76,11 @@ static IEnumerable<Branch> GetBranchesToDelete(IEnumerable<Branch> localBranches
 {
     var branchesToDelete = new List<Branch>();
 
+    if (!localBranches.Any())
+    {
+        return branchesToDelete;
+    }
+
     var branchMap = new Dictionary<int, Branch>();
 
     int i = 1;
